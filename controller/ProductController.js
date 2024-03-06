@@ -59,5 +59,6 @@ productRouter.patch("/update/:id", bodyParser.json(), (req, res) => {
 });
 
 export {
-   productRouter 
+   productRouter,
+   express
 };

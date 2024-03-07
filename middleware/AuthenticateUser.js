@@ -5,8 +5,8 @@ const {sign, verify} = pkg;
 
 function createToken(user){
     return sign({
-        emailAdd: user.emailAdd,
-        userPwd: user.userPwd
+        userEmail: user.userEmail,
+        userPass: user.userPass
     },
     process.env.SECRET_KEY,
     {

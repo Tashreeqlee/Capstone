@@ -92,11 +92,11 @@ class Users {
       });
     });
   }
+
   login(req, res) {
     const { userEmail, userPass } = req.body;
     const qry = `
-    SELECT userID, userName, userSurname,
-    userEmail, userPass, userRole
+    SELECT userEmail, userPass
     FROM Users;
         WHERE userEmail = '${userEmail}';
         `;

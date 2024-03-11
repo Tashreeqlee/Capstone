@@ -34,6 +34,7 @@ app.get('^/$|/home', (req, res) => {
 })
 app.use('/users', userRouter)
 app.use('/products', productRouter)
+// app.use('/cart', cartRouter)
 app.use(errorHandling)
 app.listen(port, ()=>{
     console.log(`Server is running on port ${port}`)

@@ -4,6 +4,7 @@ import pkg from 'jsonwebtoken';
 const {sign, verify} = pkg;
 
 function createToken(user){
+    console.log(user);
     return sign({
         userEmail: user.userEmail,
         userPass: user.userPass

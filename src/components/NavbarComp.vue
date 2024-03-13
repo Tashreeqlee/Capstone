@@ -1,15 +1,77 @@
 <template>
-    <div>
-
-    </div>
+  <div>
+    <nav
+      class="navbar bg-black navbar-expand-lg border-body"
+      data-bs-theme="dark"
+    >
+      <div class="container-fluid row">
+        <div class="col-4">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <router-link to="/" class="navButtons">Home</router-link>
+              </li>
+              <li class="nav-item">
+                <router-link to="/about" class="navButtons">About</router-link>
+              </li>
+              <li class="nav-item">
+                <router-link to="/products" class="navButtons"
+                  >Products</router-link
+                >
+              </li>
+              <li class="nav-item">
+                <router-link to="/admin" class="navButtons">Admin</router-link>
+              </li>
+              <li class="nav-item">
+                <router-link to="/contact" class="navButtons"
+                  >Contact</router-link
+                >
+              </li>
+              <li class="nav-item">
+                <router-link to="/cart" class="navButtons">Cart</router-link>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-4 d-flex justify-content-evenly text-white">
+          <router-link to="/login" class="navButtons">Log In</router-link>
+          <router-link to="/profile" class="navButtons">Profile</router-link>
+        </div>
+      </div>
+    </nav>
+  </div>
 </template>
 
 <script>
-    export default {
-        
-    }
+export default {};
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+nav {
+  background-color: #8ca1d1 !important;
+}
 
+.navButtons {
+  margin-right: 20px;
+  color: #eeebdd;
+  font-size: x-large;
+}
+
+a {
+  text-decoration: none;
+}
+nav a.router-link-exact-active {
+  border-bottom: 2px solid;
+}
 </style>

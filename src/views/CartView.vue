@@ -1,13 +1,12 @@
 <template>
-    <div class="cart">
-        <h1>Cart</h1>
-    </div>
-  </template>
-  
-  <script>
-  export default {
-    
+ <CartComp/>
+</template>
+
+<script>
+import CartComp from '@/components/CartComp.vue';
+export default {
+  components: {
+    CartComp
   }
-  </script>
-  
-  
+};
+</script>

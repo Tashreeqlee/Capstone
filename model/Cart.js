@@ -2,7 +2,8 @@ import {connection as db} from '../config/index.js'
 
 class Cart{
     fetchCart(req, res){
-        const query = `= ${req.params.id};`;
+        const query = `SELECT cartID, quantity, userID, prodID
+        FROM Cart;`;
 
         db.query(query, (err, results) => {
             if(err) throw err; 

@@ -1,5 +1,6 @@
 import { userRouter,express } from "./controller/UserController.js";
 import { productRouter } from "./controller/ProductController.js";
+import { cartRouter } from "./controller/CartController.js";
 import cookieParser from "cookie-parser";
 import { errorHandling } from "./middleware/ErrorHandling.js";
 import path from 'path';
@@ -34,7 +35,7 @@ app.get('^/$|/home', (req, res) => {
 })
 app.use('/users', userRouter)
 app.use('/products', productRouter)
-// app.use('/cart', cartRouter)
+app.use('/cart', cartRouter)
 app.use(errorHandling)
 app.listen(port, ()=>{
     console.log(`Server is running on port ${port}`)

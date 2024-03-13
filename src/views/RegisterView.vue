@@ -1,12 +1,15 @@
 <template>
-    <div class="register">
-        <h1>Register</h1>
+    <div>
+
     </div>
-  </template>
-  
-  <script>
-  export default {
-    
-  }
-  </script>
-  
+</template>
+
+<script>
+    export default {
+        
+    }
+</script>
+
+<style lang="scss" scoped>
+
+</style>

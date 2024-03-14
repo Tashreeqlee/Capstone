@@ -96,8 +96,9 @@ class Users {
   login(req, res) {
     const { userEmail, userPass } = req.body;
     const qry = `
-    SELECT userEmail, userPass
-    FROM Users
+    SELECT userID, userName, userSurname,
+    userEmail, userPass, userRole
+    FROM Users;
     WHERE userEmail = '${userEmail}';
         `;
     db.query(qry, async (err, result) => {

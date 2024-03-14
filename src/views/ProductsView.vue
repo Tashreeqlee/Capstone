@@ -46,7 +46,7 @@
       },
     },
     computed: {
-      Products() {
+      products() {
         return this.$store.state.products?.filter((product) => {
           let isMatch = true;
           if (
@@ -105,7 +105,7 @@
   }
   
   .sort {
-    background-color: #EF370E;
+    background-color: #e7d3cf;
     color: white;
     padding: 10px 20px;
     margin-right: 10px;
@@ -116,8 +116,8 @@
   
   input {
     color: #eeebdd !important;
-    border: 2px solid #EF370E;
-    background: #EF370E !important;
+    border: 2px solid #e7d3cf;
+    background: #e7d3cf !important;
     border-radius: 20px;
   }
   

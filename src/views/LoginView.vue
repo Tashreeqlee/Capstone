@@ -26,7 +26,7 @@
           required
         />
       </div>
-      <button @click.prevent="login" type="button" class="">
+      <button @click.prevent="log" type="button" class="">
         Login
       </button>
     </form>
@@ -48,24 +48,18 @@
     data() {
     return {
       payload: {
-        emailAdd: "",
+        userEmail: "",
         userPass: "",
       },
     };
   },
   computed: {
-    user() {
-      return this.$store.state.user;
-    },
   },
   methods: {
-    login() {
+    log() {
       this.$store.dispatch("login", this.payload);
     },
   },
-  beforeCreate() {
-    this.$store.dispatch("fetchUsers");
-  }
 };
   </script>
 

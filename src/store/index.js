@@ -6,7 +6,7 @@ const { cookies } = useCookies();
 import router from "@/router";
 import AuthenticateUser from "@/service/AuthenticateUser";
 
-const Dazzle = "https://capstone-36mc.onrender.com";
+const Dazzle = "https://capstone-36mc.onrender.com/";
 
 export default createStore({
   state: {
@@ -277,6 +277,7 @@ export default createStore({
             token,
             result,
           });
+          console.log('Store - Login: ', token);
           AuthenticateUser.applyToken(token);
           sweet({
             title: msg,

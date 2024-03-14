@@ -20,8 +20,8 @@ class Users {
     const qry = `
     SELECT userID, userName, userSurname,
     userEmail, userPass, userRole
-    FROM Users;
-        WHERE userID = ${req.params.id};
+    FROM Users
+    WHERE userID = ${req.params.id};
         `
     db.query(qry, (err, result) => {
       if (err) throw err;

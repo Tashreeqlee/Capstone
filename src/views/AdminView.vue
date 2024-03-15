@@ -13,6 +13,7 @@
             <th>Surname</th>
             <th>Role</th>
             <th>Email Address</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody v-for="user in users" :key="user.userID">
@@ -22,14 +23,6 @@
             <td>{{ user.userSurname }}</td>
             <td>{{ user.userRole }}</td>
             <td>{{ user.userEmail }}</td>
-            <td class="image">
-              <img
-                :src="user.userRole"
-                :alt="user.userName"
-                loading="lazy"
-                class="img-fluid image"
-              />
-            </td>
             <td>
               <EditUserComp :user="user" /><button
                 class="btn"

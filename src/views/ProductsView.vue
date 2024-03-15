@@ -13,9 +13,9 @@
         </div>
       </div>
     
-      <div v-if="Products" class="display container-fluid">
+      <div v-if="products" class="display container-fluid">
         <ProdCard
-          v-for="product of Products"
+          v-for="product of products"
           :key="product.prodID"
           :product="product"
         />

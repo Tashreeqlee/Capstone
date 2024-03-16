@@ -13,7 +13,7 @@
             <th>Surname</th>
             <th>Role</th>
             <th>Email Address</th>
-            <th>Action</th>
+            <th></th>
           </tr>
         </thead>
         <tbody v-for="user in users" :key="user.userID">

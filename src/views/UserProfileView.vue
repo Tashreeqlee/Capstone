@@ -16,11 +16,7 @@
             <button>
               <router-link
                 :to="{ name: 'edit user', params: { id: user.userID } }"
-                ><img
-                  class="edit-icon"
-                  src="https://i.postimg.cc/T2Z8Qtg6/icons8-edit-50-removebg-preview.png"
-                  alt=""
-              /></router-link>
+                ></router-link>
             </button>
             <button
               type="submit"

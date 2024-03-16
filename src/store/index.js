@@ -4,7 +4,7 @@ import sweet from "sweetalert";
 import { useCookies } from "vue3-cookies";
 const { cookies } = useCookies();
 import router from "@/router";
-import AuthenticateUser from "@/service/AuthenticateUser";
+import AuthenticateUser from "@/service/Authenticateuser";
 
 const Dazzle = "https://capstone-36mc.onrender.com/";
 
@@ -115,6 +115,28 @@ export default createStore({
           timer: 2000,
         });
       }
+    },
+
+    async addProduct(context, payload) {
+      try {
+        let { msg } = (await axios.post(`${Dazzle}products/addProduct`, payload))
+          .data;
+        
+          context.dispatch("fetchProducts");
+          sweet({
+            title: "Add product",
+            text: msg,
+            icon: "success",
+            timer: 2000,
+          });
+        } catch (e) {
+          sweet({
+            title: "Error",
+            text: "An error occurred when adding a product.",
+            icon: "error",
+            timer: 2000,
+          });
+        }
     },
     async updateProduct(context, payload) {
       try {

@@ -54,6 +54,13 @@
     };
   },
   computed: {
+    msg() {
+      return this.$store.state.msg;
+    },
+
+    user() {
+      return this.$store.state.user;
+    },
   },
   methods: {
     log() {

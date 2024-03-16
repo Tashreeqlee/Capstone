@@ -7,15 +7,14 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h2 class="modal-title" id="exampleModalLabel">Add Product</h2>
-                        <button class="btn-close" type="button" aria-label="close"></button>
                     </div>
                     <div class="modal-body">
-                        <input class="input m-2" type="text" placeholder="Product Name" v-model="model.product.prodName">
-                        <input class="input m-2" type="text" placeholder="Price" v-model="model.product.prodPrice">
-                        <input class="input m-2" type="text" placeholder="Category" v-model="model.product.category">
-                        <input class="input m-2" type="text" placeholder="Quantity" v-model="model.product.quantity">
-                        <input class="input m-2" type="text" placeholder="Description" v-model="model.product.description">
-                        <input class="input m-2" type="text" placeholder="Url" v-model="model.product.prodUrl">
+                        <input class="input m-2" type="text" placeholder="Product Name" v-model="prodData.prodName">
+                        <input class="input m-2" type="text" placeholder="Price" v-model="prodData.prodPrice">
+                        <input class="input m-2" type="text" placeholder="Category" v-model="prodData.category">
+                        <input class="input m-2" type="text" placeholder="Quantity" v-model="prodData.quantity">
+                        <input class="input m-2" type="text" placeholder="Description" v-model="prodData.description">
+                        <input class="input m-2" type="text" placeholder="Url" v-model="prodData.prodUrl">
                     </div>
                     <div class="modal-footer">
                         <button class="btn" type="button" data-bs-dismiss="modal">Close</button>
@@ -29,29 +28,26 @@
 
 <script>
 export default {
-        data() {
-            return {
-                model: {
-                    product: {
-                        prodName: "",
-                        prodPrice: "",
-                        quantity: "",
-                        category: "",
-                        description: "",
-                        prodUrl: "",
-                    }
-                }
-            };
-        },
-        methods: {
-            addProduct() {
-                this.$store.dispatch("addProduct", this.model.product);
-                setTimeout(() => {
-                    location.reload();
-                }, 500);
-            },
-        },
+  props: ["product"],
+  data() {
+    return {
+      prodData: {
+        prodName: "",
+        prodPrice: "",
+        quantity: "",
+        category: "",
+        description: "",
+        prodUrl: "",
+
+      },
     };
+  },
+  methods: {
+    addProduct() {
+      this.$store.dispatch("addProduct", this.prodData);
+    },
+  },
+};
 </script>
 
 

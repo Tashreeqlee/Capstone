@@ -39,7 +39,7 @@ productRouter.post("/addProduct", bodyParser.json(), (req, res) => {
 
 productRouter.delete("/delete/:id", (req, res)=>{
   try{
-      users.deleteProduct(req, res)
+      products.deleteProduct(req, res)
   }catch(e) {
       res.json({
           status: res.statusCode,
@@ -50,7 +50,7 @@ productRouter.delete("/delete/:id", (req, res)=>{
 
 productRouter.patch("/update/:id", bodyParser.json(), (req, res) => {
   try {
-    users.updateProduct(req, res);
+    products.updateProduct(req, res);
   } catch (e) {
     res.json({
       status: res.statusCode,

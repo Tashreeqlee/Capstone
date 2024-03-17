@@ -30,12 +30,12 @@
   margin: 20px;
   background-color: #1b1717;
   color: #eeebdd;
-  border: 2px solid #EF370E;
+  border: 2px solid #8ca1d1 ;
   border-radius: 30px;
   padding: 5px;
 }
 .card:hover {
-  box-shadow: 0 0 30px 5px #EF370E
+  box-shadow: 0 0 30px 5px #8ca1d1 
 }
 .card-img-top {
   height: 40vh;

@@ -105,7 +105,7 @@
   }
   
   .sort {
-    background-color: #e7d3cf;
+    background-color: #8ca1d1;
     color: white;
     padding: 10px 20px;
     margin-right: 10px;
@@ -117,7 +117,7 @@
   input {
     color: #eeebdd !important;
     border: 2px solid #e7d3cf;
-    background: #e7d3cf !important;
+    background: #8ca1d1 !important;
     border-radius: 20px;
   }
   
@@ -150,8 +150,7 @@
           width: 90%;
           margin: 10px;
       }
-  }
-  
+    }
   
   
   

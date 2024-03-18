@@ -6,9 +6,15 @@
     >
       <div class="container-fluid row">
         <div class="col-4">
+          <router-link class="navbar-brand" to="/"
+          ><img
+            src="https://i.ibb.co/tQXn3x5/Screenshot-2024-03-07-143739.png"
+            alt="Logo"
+            class="navImage"
+        /></router-link>
           <button
-            class="navbar-toggler"
-            type="button"
+          class="navbar-toggler"
+          type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
@@ -39,7 +45,7 @@
                 >
               </li>
               <li class="nav-item">
-                <router-link to="/cart" class="navButtons">Cart</router-link>
+                <router-link to="/checkout" class="navButtons">Checkout</router-link>
               </li>
             </ul>
           </div>
@@ -73,5 +79,13 @@ a {
 }
 nav a.router-link-exact-active {
   border-bottom: 2px solid;
+}
+.navImage {
+  height: 60px;
+  width: 60px;
+}
+
+.routerImg {
+  height: 30px;
 }
 </style>

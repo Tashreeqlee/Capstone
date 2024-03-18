@@ -40,7 +40,7 @@
           <div class="h-100 p-5 m-4 rounded-3">
             <img
               id="img-1"
-              src=""
+              src="https://i.ibb.co/tQXn3x5/Screenshot-2024-03-07-143739.png"
             />
           </div>
         </div>

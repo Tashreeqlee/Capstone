@@ -9,12 +9,12 @@
                         <h2 class="modal-title" id="exampleModalLabel">Add Product</h2>
                     </div>
                     <div class="modal-body">
-                        <input class="input m-2" type="text" placeholder="Product Name" v-model="prodData.prodName">
-                        <input class="input m-2" type="text" placeholder="Price" v-model="prodData.prodPrice">
-                        <input class="input m-2" type="text" placeholder="Category" v-model="prodData.category">
-                        <input class="input m-2" type="text" placeholder="Quantity" v-model="prodData.quantity">
-                        <input class="input m-2" type="text" placeholder="Description" v-model="prodData.description">
-                        <input class="input m-2" type="text" placeholder="Url" v-model="prodData.prodUrl">
+                        <input class="input m-2" type="text" placeholder="Product Name" v-model="payload.prodName">
+                        <input class="input m-2" type="text" placeholder="Price" v-model="payload.prodPrice">
+                        <input class="input m-2" type="text" placeholder="Category" v-model="payload.category">
+                        <input class="input m-2" type="text" placeholder="Quantity" v-model="payload.quantity">
+                        <input class="input m-2" type="text" placeholder="Description" v-model="payload.description">
+                        <input class="input m-2" type="text" placeholder="Url" v-model="payload.prodUrl">
                     </div>
                     <div class="modal-footer">
                         <button class="btn" type="button" data-bs-dismiss="modal">Close</button>
@@ -31,7 +31,7 @@ export default {
   props: ["product"],
   data() {
     return {
-      prodData: {
+      payload: {
         prodName: "",
         prodPrice: "",
         quantity: "",
@@ -44,7 +44,7 @@ export default {
   },
   methods: {
     addProduct() {
-      this.$store.dispatch("addProduct", this.prodData);
+      this.$store.dispatch("addProduct", this.payload);
     },
   },
 };

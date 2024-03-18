@@ -25,9 +25,17 @@ export default createStore({
         return total + sumOfCart;
       }, 0);
     },
-
   },
   mutations: {
+    deleteUser(state, userID) {
+      state.users = state.users.filter((user) => user.userID !== userID);
+    },
+    deleteProduct(state, prodID) {
+      state.products = state.products.filter(
+        (product) => product.prodID !== prodID
+      );
+    },
+
     setProducts: (state, value) => {
       state.products = value;
     },
@@ -119,24 +127,25 @@ export default createStore({
 
     async addProduct(context, payload) {
       try {
-        let { msg } = (await axios.post(`${Dazzle}products/addProduct`, payload))
-          .data;
-        
-          context.dispatch("fetchProducts");
-          sweet({
-            title: "Add product",
-            text: msg,
-            icon: "success",
-            timer: 2000,
-          });
-        } catch (e) {
-          sweet({
-            title: "Error",
-            text: "An error occurred when adding a product.",
-            icon: "error",
-            timer: 2000,
-          });
-        }
+        let { msg } = (
+          await axios.post(`${Dazzle}products/addProduct`, payload)
+        ).data;
+
+        context.dispatch("fetchProducts");
+        sweet({
+          title: "Add product",
+          text: msg,
+          icon: "success",
+          timer: 2000,
+        });
+      } catch (e) {
+        sweet({
+          title: "Error",
+          text: "An error occurred when adding a product.",
+          icon: "error",
+          timer: 2000,
+        });
+      }
     },
     async updateProduct(context, payload) {
       try {
@@ -163,10 +172,10 @@ export default createStore({
         });
       }
     },
-    async deleteProduct(context, payload) {
+    async deleteProduct(context, prodID) {
       try {
         let { msg } = await (
-          await axios.delete(`${Dazzle}products/delete/${payload.prodID}`)
+          await axios.delete(`${Dazzle}products/delete/${prodID}`)
         ).data;
         context.dispatch("fetchProducts");
         sweet({
@@ -250,7 +259,7 @@ export default createStore({
     async updateUser(context, payload) {
       try {
         let { msg } = (
-          await axios.patch(`${Dazzle}users/update/${payload.id}`, payload)
+          await axios.patch(`${Dazzle}users/update/${payload.userID}`, payload)
         ).data;
         context.dispatch("fetchUsers");
         sweet({
@@ -268,9 +277,10 @@ export default createStore({
         });
       }
     },
-    async deleteUser(context, payload) {
+    async deleteUser(context, userID) {
       try {
-        let { msg } = (await axios.delete(`${Dazzle}users/${payload.id}`)).data;
+        let { msg } = (await axios.delete(`${Dazzle}users/${userID}`))
+          .data;
         context.dispatch("fetchUsers");
         sweet({
           title: "Delete user",
@@ -299,7 +309,6 @@ export default createStore({
             token,
             result,
           });
-          console.log('Store - Login: ', token);
           AuthenticateUser.applyToken(token);
           sweet({
             title: msg,
@@ -326,6 +335,20 @@ export default createStore({
         });
       }
     },
+    //logout
+    async LogOut(context) {
+      context.commit("setUser");
+      cookies.remove("LegitUser");
+      localStorage.removeItem("cart");
+      sweet({
+        title: "Logged Out",
+        text: "You have been Logged Out",
+        icon: "success",
+        timer: 4000,
+      });
+    },
+
+
     // Cart
     addCart(context, product) {
       context.commit("addToCart", product);

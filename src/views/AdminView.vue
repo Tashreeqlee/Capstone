@@ -59,7 +59,7 @@
               <th>Action</th>
             </tr>
           </thead>
-          <tbody v-for="product in products" :key="product">
+          <tbody v-for="product in products" :key="product.prodID">
             <tr v-if="products">
               <td>{{ product.prodID }}</td>
               <td>{{ product.prodName }}</td>
@@ -116,35 +116,19 @@
       products() {
         return this.$store.state.products;
       },
-      product() {
-        return this.$store.state.product;
-      },
-      user() {
-        return this.$store.state.user;
-      },
     },
     mounted() {
       this.$store.dispatch("fetchProducts");
       this.$store.dispatch("fetchUsers");
     },
     methods: {
-      deleteProduct(prodID) {
-        if (confirm("Are you sure you want to delete this product?")) {
-          this.$store.dispatch("deleteProduct", prodID);
-          setTimeout(() => {
-            location.reload();
-          }, 500);
-        }
-      },
-      deleteUser(id) {
-        if (confirm("Are you sure you want to delete this user?")) {
-          this.$store.dispatch("deleteUser", id);
-          setTimeout(() => {
-            location.reload();
-          }, 500);
-        }
-      },
+    deleteUser(userID) {
+      this.$store.dispatch("deleteUsers", userID);
     },
+    deleteProduct(prodID) {
+      this.$store.dispatch("deleteBoats", prodID);
+    },
+  },
   };
   </script>
 

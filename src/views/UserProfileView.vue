@@ -1,86 +1,60 @@
 <template>
-<div v-if="currentUser" class="product_details" :key="currentUser.userId" :user="currentUser">
-  <div class="card mx-auto">
-    <div class="container d-flex justify-content-center align-items-center">
-      <div class="card my-2 row">
-        <div class="row justify-content-center align-items-center">
-          <div class="col-4">
-            <h1>Profile</h1>
+<div v-if="user">
+  <div class="profile"></div>
+  <div class="container-fluid story">
+    <h1>User Profile</h1>
+  </div>
+  <div
+    :user="user"
+    :key="user.userID"
+    class="d-flex justify-content-center gap-5 my-5"
+  >
+    <div>
+      <img :src="user.userProfile" :alt="user.userName" class="logo" />
+    </div>
+    <div class=" ">
 
-            <h3>First Name:</h3>
-            <p>{{ user.userName }} {{ user.userSurname }}</p>
-            <h3>Role:</h3>
-            <p>{{ user.userRole }}</p>
-            <h3>Email:</h3>
-            <p>{{ user.userEmail }}</p>
-            <button>
-              <router-link
-                :to="{ name: 'edit user', params: { id: user.userID } }"
-                ></router-link>
-            </button>
-            <button
-              type="submit"
-              class="btn button"
-              @click="deleteUser(user.userID)"
-              id="delete-row"
-            >
-              <img
-                class="edit-icon"
-                src="https://i.postimg.cc/kMtSk56b/icons8-delete-30.png"
-                alt=""
-              />
-            </button>
-          </div>
-        </div>
-
-        <div></div>
-      </div>
+      <h4>Name : {{ user.userName }}</h4>
+      <h4>Surname: {{ user.userSurname }}</h4>
+      <h4>Role: {{ user.userRole }}</h4>
+      <h4>Email Address: {{ user.userEmail }}</h4>
     </div>
   </div>
+  <EditUserComp :user="user"/>
+   <button
+        type="button"
+        @click="deleteUser(user.userID)"
+        class="btn btn-outline-dark text-danger m-2 animate__animated animate__bounce animate__delay-3s"
+      >
+        Delete
+      </button>
+      
 </div>
-<div v-else>
-  <spinner />
-</div>
-
-
 
 
 </template>
 <script>
-
+import EditUserComp from '@/components/EditUserComp.vue';
 
 export default {
-// props: ["user"],
-
-computed: {
-  currentUser() {
-    return this.$store.state.user;
+  components: {
+    EditUserComp
   },
-  id() {
-    return this.$route.params.id;
-  },
-  userRole() {
-    return this.$store.state.userRole;
-  },
-},
 
-mounted() {
-  
-  this.$store.dispatch("fetchUser", this.id).then(() => {
-});
-},
-
-methods: {
-  deleteUser(userID) {
-    if (confirm("Are you sure you want to delete this user?")) {
-      this.$store.dispatch("deleteUser", userID);
-      this.$router.push("/login");
-    }
-    else{
-      alert("Failed to delete user. Please try again.");
+  computed: {
+    user() {
+      return("ActualUser").result || this.$store.state.user;
+        },
+      products() {
+        return this.$store.state.products
     }
   },
-},
+  methods: {
+    deleteUser(userID) {
+          this.$store.dispatch("deleteUsers", userID)
+              alert("Are you sure you want to Delete?");
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>

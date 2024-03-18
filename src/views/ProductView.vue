@@ -3,6 +3,8 @@
         <h1>{{ product.prodName }}</h1>
         <img :src="product.prodUrl" :alt="product.prodName" class="img-fluid"/>
         <p>Price: R {{ product.prodPrice }}</p>
+        <p>Category: {{ product.category }}</p>
+        <p>Description: {{ product.description }}</p>
         <p>Stock Left: {{ product.quantity }}</p>
     </div>
     <div v-else class="d-flex justify-content-center">

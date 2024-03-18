@@ -43,7 +43,7 @@ export default {
     };
   },
   methods: {
-    addProduct() {
+    addProducts() {
       this.$store.dispatch("addProduct", this.payload);
     },
   },

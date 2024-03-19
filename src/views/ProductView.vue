@@ -6,6 +6,9 @@
         <p>Category: {{ product.category }}</p>
         <p>Description: {{ product.description }}</p>
         <p>Stock Left: {{ product.quantity }}</p>
+        <button class="btn btn-outline-dark animate__animated animate__bounce animate__delay-3s" @click.prevent="addCart(product)">
+            Add To Cart
+          </button>
     </div>
     <div v-else class="d-flex justify-content-center">
         <SpinnerComp/>
@@ -24,6 +27,11 @@ export default {
     mounted() {
         this.$store.dispatch("fetchProduct", this.$route.params );
     },
+    methods: {
+    addCart(product) {
+      this.$store.dispatch("addToCart", product);
+    },
+  },
     components: {
         SpinnerComp
     }

@@ -34,7 +34,7 @@ class Users {
   async createUser(req, res) {
     // Payload
     let data = req.body
-    data.userPass = await hash(data?.userPass, 8);
+    data.userPass = await hash(data.userPass, 8);
     let user = {
       userEmail: data.userEmail,
       userPass: data.userPass,
@@ -62,16 +62,16 @@ class Users {
   }
   async updateUser(req, res) {
     const data = req.body;
-    if (data?.userPass) {
-      data.userPass = await hash(data?.userPass, 8);
+    if (data.userPass) {
+      data.userPass = await hash(data.userPass, 8);
     }
 
     const qry = `
         UPDATE Users
         SET ?
-        WHERE userID = ${req.params.id};
+        WHERE userID = ?;
         `;
-    db.query(qry, [data], (err) => {
+    db.query(qry, [data,req.params.id], (err) => {
       if (err) throw err;
       res.json({
         status: res.statusCode,

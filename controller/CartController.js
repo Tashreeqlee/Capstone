@@ -26,17 +26,6 @@ cartRouter.post('/user/:id/cart', bodyParser.json(), (req, res) => {
     }
 });
 
-// cartRouter.put('/user/:id/cart/:id', bodyParser.json(), (req, res) => {
-//     try {
-//         cart.updateCart(req, res)
-//     } catch (e) {
-//         res.json({
-//             status: res.statusCode,
-//             msg: 'Error'
-//         })
-//     }
-// });
-
 cartRouter.patch('/user/:id/cart/:id', bodyParser.json(), (req, res) => {
     try {
         cart.updateCart(req, res);

@@ -2,8 +2,12 @@ import {connection as db} from '../config/index.js'
 
 class Cart{
     fetchCart(req, res){
-        const query = `SELECT cartID, quantity, userID, prodID
-        FROM Cart;`;
+        const query = `SELECT c.cartID, u.userID, p.prodID, p.prodName, p.prodPrice, p.prodUrl
+        FROM Cart c
+        INNER JOIN Users u
+        USING(userID)
+        INNER JOIN Products p
+        USING(prodID);`;
 
         db.query(query, (err, results) => {
             if(err) throw err; 

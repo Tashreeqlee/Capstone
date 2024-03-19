@@ -28,16 +28,18 @@ class Products{
             })
         })
     }
-    addProduct(req, res){
+    addProduct(req, res) {
+        const data = req.body;
         const qry = `
         INSERT INTO Products
         SET ?;
         `
-        db.query(qry, [req.body], (err, results)=>{
+        db.query(qry, [data], (err, results)=>{
             if(err) throw err
             res.json({
                 status: res.statusCode,
-                msg: 'New product was added'
+                msg: 'New product was added',
+                results: results[0]
             })
         })
     }

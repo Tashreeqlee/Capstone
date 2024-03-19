@@ -32,12 +32,10 @@
                 <router-link to="/about" class="navButtons">About</router-link>
               </li>
               <li class="nav-item">
-                <router-link to="/products" class="navButtons"
-                  >Products</router-link
-                >
+                <router-link to="/products" class="navButtons">Products</router-link>
               </li>
               <li class="nav-item">
-                <router-link to="/admin" class="navButtons">Admin</router-link>
+                <router-link to="/admin" class="navButtons" v-show="onlyAdmin">Admin</router-link>
               </li>
               <li class="nav-item">
                 <router-link to="/contact" class="navButtons"
@@ -45,8 +43,11 @@
                 >
               </li>
               <li class="nav-item">
-                <router-link to="/checkout" class="navButtons">Checkout</router-link>
+                <router-link to="/checkout" class="navButtons" v-show="userAdmin">Checkout</router-link>
               </li>
+              <li class="nav-item">
+              <router-link class="nav-link text-dark" @click="logOut" to="/login" v-show="userAdmin" >Logout</router-link>
+            </li>
             </ul>
           </div>
         </div>
@@ -60,7 +61,32 @@
 </template>
 
 <script>
-export default {};
+import { useCookies } from 'vue3-cookies';
+const {cookies} = useCookies();
+export default {
+  computed: {
+    user() {
+       const user = this.$store.state.user ||
+        cookies.get('LegitUser')
+      return user
+    },
+    result() {
+      const result = this.user?.result
+      return result
+    },
+    onlyAdmin() {
+      return this.result?.userRole?.toLowerCase() === "admin"
+    },
+    userAdmin() {
+      return this.result?.userRole?.toLowerCase() === "user"|| this.result?.userRole?.toLowerCase() === "admin"
+    },
+  },
+  methods: {
+    logOut() {
+      this.$store.dispatch("LogOut")
+    }
+  }
+};
 </script>
 
 <style scoped>

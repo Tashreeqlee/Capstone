@@ -1,7 +1,7 @@
 <template>
 <div v-if="user">
   <div class="profile"></div>
-  <div class="container-fluid story">
+  <div class="container-fluid">
     <h1>User Profile</h1>
   </div>
   <div
@@ -36,6 +36,8 @@
 <script>
 import EditUserComp from '@/components/EditUserComp.vue';
 
+import { useCookies } from 'vue3-cookies';
+const { cookies } = useCookies();
 export default {
   components: {
     EditUserComp
@@ -43,7 +45,7 @@ export default {
 
   computed: {
     user() {
-      return("ActualUser").result || this.$store.state.user;
+      return cookies.get("LegitUser").result || this.$store.state.user;
         },
       products() {
         return this.$store.state.products

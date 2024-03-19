@@ -54,9 +54,9 @@
         />
         <span></span>
       </label>
-      <button class="submit" @click="register">Signup</button>
+      <button class="submit">Signup</button>
       <p class="log-in">
-        Already have an account ? <a href="/login">Log in</a>
+        Already have an account ? <router-link link to="/login">Log in</router-link>
       </p>
     </form>
   </div>
@@ -65,7 +65,6 @@
 <script>
 
 export default {
-  Name: "Login",
   data() {
     return {
       payload: {
@@ -77,15 +76,9 @@ export default {
       },
     };
   },
-  computed: {
-    msg() {
-      return this.$store.state.msg;
-    },
-  },
   methods: {
     register() {
-      this.$store.dispatch("register", this.payload);
-      this.$router.push("/profile");
+      this.$store.dispatch('register', this.payload);
     },
   },
 };

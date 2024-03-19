@@ -74,6 +74,10 @@ export default {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-image: url(https://i.ibb.co/YPjNfdg/smoke-376543-1920.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
 }
 
 .container {

@@ -1,19 +1,19 @@
 <template>
   <div>
-    <h1 class="header text-center">Admin</h1><br>
+    <h1 class="header text-center text-white">Admin</h1><br>
     <div>
-      <h3 class="users text-center">Users</h3>
+      <h3 class="users text-center text-white">Users</h3>
       <AddUserComp />
-      <div class="table-responsive">
-            <table class="text-center">
+      <div class="table-responsive text-white">
+            <table class="text-center ">
         <thead>
-          <tr>
+          <tr class="text-dark">
             <th>ID</th>
             <th>Name</th>
             <th>Surname</th>
             <th>Role</th>
             <th>Email Address</th>
-            <th></th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody v-for="user in users" :key="user.userID">
@@ -42,12 +42,12 @@
   
       <br><br>
       <div>
-        <h3 class="products text-center">Products</h3>
+        <h3 class="products text-center text-white">Products</h3>
         <AddProdComp />
-        <div class="table-responsive">
+        <div class="table-responsive text-white">
           <table >
           <thead>
-            <tr>
+            <tr class="text-dark">
               <th>ID</th>
               <th>Name</th>
               <th>Price</th>

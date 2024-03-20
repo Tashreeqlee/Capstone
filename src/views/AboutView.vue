@@ -1,7 +1,7 @@
 <template>
   <div class="jumbotron text-center text-light">
-      <h1 class="display-3">What is Dazzle District?</h1>
-      <p class="lead">Where elegance meets innovation in the world of fine jewelry.</p>
+      <h1 class="display-3 text-animation">What is Dazzle District?</h1>
+      <p class="lead text-animation">Where elegance meets innovation in the world of fine jewelry.</p>
   </div>
 
   <div class="container py-4 mb-5">
@@ -43,7 +43,7 @@
 
 <script>
 export default {
-  // Add any necessary logic here
+  
 }
 </script>
 
@@ -51,6 +51,12 @@ export default {
 .about-page {
   background-color: #8ca1d1;
 }
+.text-animation {
+    color: whitesmoke;
+    overflow: hidden;
+    animation: typing 3s backwards;
+    white-space: nowrap;
+  }
 
 .jumbotron {
   background-color: #000;

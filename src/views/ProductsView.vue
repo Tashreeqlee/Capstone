@@ -77,9 +77,12 @@
   <style scoped>
   
   .bgcolor{
-    background-color: #C8C8C8;
+    background-image: url(https://i.ibb.co/YPjNfdg/smoke-376543-1920.jpg);
+  background-size: cover;
+  background-attachment: fixed;
   }
   .text-animation {
+    color: whitesmoke;
     overflow: hidden;
     animation: typing 3s backwards;
     white-space: nowrap;

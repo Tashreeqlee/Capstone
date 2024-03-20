@@ -1,37 +1,30 @@
 <template>
-<div v-if="user">
-  <div class="profile"></div>
-  <div class="container-fluid">
-    <h1>User Profile</h1>
-  </div>
-  <div
-    :user="user"
-    :key="user.userID"
-    class="d-flex justify-content-center gap-5 my-5"
-  >
-    <div>
-      <img :src="user.userProfile" :alt="user.userName" class="logo" />
+  <div class="card-container">
+  <div v-if="user" class="profile-card">
+    <div class="profile-card-header">
+      <h1>User Profile</h1>
     </div>
-    <div class=" ">
-
-      <h4>Name : {{ user.userName }}</h4>
-      <h4>Surname: {{ user.userSurname }}</h4>
-      <h4>Role: {{ user.userRole }}</h4>
-      <h4>Email Address: {{ user.userEmail }}</h4>
-    </div>
+    <div :user="user" :key="user.userID" class="profile-card-content">
+      <div class="profile-card-details">
+        <h4>Name: <span>
+          {{ user.userName }}
+        </span></h4>
+        <h4>Surname: {{ user.userSurname }}</h4>
+        <h4>Role: {{ user.userRole }}</h4>
+        <h4>Email Address: {{ user.userEmail }}</h4>
+      </div>
+    
+    <EditUserComp :user="user" />
+    <button
+      type="button"
+      @click="deleteUser(user.userID)"
+      class="btn btn-outline-dark text-danger m-2 animate__animated animate__bounce animate__delay-3s"
+    >
+      Delete
+    </button>
   </div>
-  <EditUserComp :user="user"/>
-   <button
-        type="button"
-        @click="deleteUser(user.userID)"
-        class="btn btn-outline-dark text-danger m-2 animate__animated animate__bounce animate__delay-3s"
-      >
-        Delete
-      </button>
-      
 </div>
-
-
+</div>
 </template>
 <script>
 import EditUserComp from '@/components/EditUserComp.vue';
@@ -59,6 +52,21 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
+<style scoped>
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.profile-card-content {
+  width: 700px;
+  height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 
 </style>

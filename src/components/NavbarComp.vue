@@ -1,16 +1,14 @@
 <template>
   <div>
     <nav
-      class="navbar bg-black navbar-expand-lg border-body"
-      data-bs-theme="dark"
+      class="navbar navbar-expand-lg border-bottom border-dark p-0"  
     >
-      <div class="container-fluid row">
-        <div class="col-4">
+      <div class="container-fluid p-5">
           <router-link class="navbar-brand" to="/"
           ><img
             src="https://i.ibb.co/tQXn3x5/Screenshot-2024-03-07-143739.png"
             alt="Logo"
-            class="navImage"
+            class="navImage img-fluid"
         /></router-link>
           <button
           class="navbar-toggler"
@@ -25,37 +23,37 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item ">
+              <router-link class="nav-link text-dark" aria-current="page" to="/"
+                >Home</router-link
+              >
+            </li>
               <li class="nav-item">
-                <router-link to="/" class="navButtons">Home</router-link>
+                <router-link class="nav-link text-dark" to="/about" >About</router-link>
               </li>
               <li class="nav-item">
-                <router-link to="/about" class="navButtons">About</router-link>
+                <router-link class="nav-link text-dark" to="/products">Products</router-link>
               </li>
               <li class="nav-item">
-                <router-link to="/products" class="navButtons">Products</router-link>
+                <router-link class="nav-link text-dark" to="/admin" v-show="onlyAdmin">Admin</router-link>
               </li>
               <li class="nav-item">
-                <router-link to="/admin" class="navButtons" v-show="onlyAdmin">Admin</router-link>
-              </li>
-              <li class="nav-item">
-                <router-link to="/contact" class="navButtons"
+                <router-link class="nav-link text-dark" to="/contact"
                   >Contact</router-link
                 >
               </li>
               <li class="nav-item">
-                <router-link to="/checkout" class="navButtons" v-show="userAdmin">Checkout</router-link>
+                <router-link class="nav-link text-dark"  to="/checkout" v-show="userAdmin">Checkout</router-link>
               </li>
-              <li class="nav-item">
+                <li class="nav-item">
+              <router-link class="nav-link text-dark" to="/profile" v-show="userAdmin">Profile</router-link>
+            </li>
+            <li class="nav-item">
               <router-link class="nav-link text-dark" @click="logOut" to="/login" v-show="userAdmin" >Logout</router-link>
             </li>
             </ul>
           </div>
         </div>
-        <div class="col-4 d-flex justify-content-evenly text-white">
-          <router-link to="/login" class="navButtons">Log In</router-link>
-          <router-link to="/profile" class="navButtons">Profile</router-link>
-        </div>
-      </div>
     </nav>
   </div>
 </template>
@@ -93,12 +91,10 @@ export default {
 nav {
   background-color: #8ca1d1 !important;
 }
-
-.navButtons {
-  margin-right: 20px;
-  color: #eeebdd;
-  font-size: x-large;
+.nav-link {
+  font-size: 20px;
 }
+
 
 a {
   text-decoration: none;
@@ -107,8 +103,8 @@ nav a.router-link-exact-active {
   border-bottom: 2px solid;
 }
 .navImage {
-  height: 60px;
-  width: 60px;
+  height: 70px;
+  width: 70px;
 }
 
 .routerImg {

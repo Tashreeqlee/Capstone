@@ -1,263 +1,105 @@
 <template>
-  <div class="bgcolor">
-    <div class="position-relative overflow-hidden text-center" id="hero">
-      <div class="col-md-5 p-lg-5 mx-auto my-5">
-        <h1 class="display-3 text-animation">About Us</h1>
-      </div>
-    </div>
+  <div class="jumbotron text-center text-light">
+      <h1 class="display-3">What is Dazzle District?</h1>
+      <p class="lead">Where elegance meets innovation in the world of fine jewelry.</p>
+  </div>
 
-    <div class="container py-4">
-      <div class="row-align-items-md-stretch">
-        <div class="col-md-6">
-          <div class="h-100 p-5 m-4 text-dark rounded-3">
-            <h1 class="red">What is Dazzle District?</h1>
-            <p>
-              Welcome to Dazzle District, where elegance meets innovation in the
-              world of fine jewelry. At Dazzle District, we believe that every
-              piece of jewelry tells a unique story, reflecting the
-              individuality and style of its wearer. Our exquisite collections
-              are crafted with precision and passion by skilled artisans, using
-              only the finest materials sourced from around the globe. From
-              classic designs that stand the test of time to avant-garde
-              creations that push the boundaries of conventional beauty, Dazzle
-              District offers a diverse range of jewelry to suit every taste and
-              occasion. Whether you're searching for the perfect engagement ring
-              to symbolize your love, a statement necklace to elevate your
-              evening ensemble, or a timeless pair of earrings to add a touch of
-              glamour to your everyday look, you'll find it all and more at
-              Dazzle District. We are committed to providing our customers with
-              an exceptional shopping experience, offering personalized service
-              and expert guidance every step of the way. With our dedication to
-              quality craftsmanship, exquisite design, and unparalleled customer
-              care, Dazzle District is your premier destination for luxurious
-              jewelry that inspires and enchants. Discover the magic of Dazzle
-              District today and adorn yourself in brilliance.
-            </p>
+  <div class="container py-4 mb-5">
+      <div class="row row-cols-1 row-cols-md-2">
+          <div class="col">
+              <div class="card h-100 p-4 animate__animated animate__fadeIn">
+                  <img src="https://i.ibb.co/0p753sR/1-CUSTOM-FINE-JEWELRY.jpg" alt="Our Story" class="card-img-top mb-3">
+                  <h2 class="card-title">Our Story</h2>
+                  <p class="card-text">At Dazzle District, we believe that every piece of jewelry tells a unique story, reflecting the individuality and style of its wearer. Our exquisite collections are crafted with precision and passion by skilled artisans, using only the finest materials sourced from around the globe.</p>
+              </div>
           </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="h-100 p-5 m-4 rounded-3">
-            <img
-              id="img-1"
-              src="https://i.ibb.co/tQXn3x5/Screenshot-2024-03-07-143739.png"
-            />
+          <div class="col">
+              <div class="card h-100 p-4 animate__animated animate__fadeIn">
+                  <img src="https://i.ibb.co/SQ4CVMm/baylee-gramling-FOw-YSRl-L-Bk-unsplash.jpg" alt="Our Mission" class="card-img-top mb-3">
+                  <h2 class="card-title">Our Mission</h2>
+                  <p class="card-text">We are committed to providing our customers with an exceptional shopping experience, offering personalized service and expert guidance every step of the way. With our dedication to quality craftsmanship, exquisite design, and unparalleled customer care, Dazzle District is your premier destination for luxurious jewelry that inspires and enchants.</p>
+              </div>
           </div>
-        </div>
       </div>
-      <div class="row-align-items-md-stretch">
-        <div class="col-md-6">
-          <div class="h-100 p-5 m-4 rounded-3">
-            <img
-              id="img-2"
-              src=""
-              loading="lazy"
-            />
+
+      <div class="row row-cols-1 row-cols-md-2 mt-4">
+          <div class="col">
+              <div class="card h-100 p-4 animate__animated animate__fadeIn">
+                  <img src="https://i.ibb.co/BT8C7F2/Gold-Silver.jpg" alt="Craftsmanship" class="card-img-top mb-3">
+                  <h2 class="card-title">Craftsmanship</h2>
+                  <p class="card-text">Our jewelry is crafted with meticulous attention to detail by skilled artisans, ensuring that each piece meets the highest standards of quality and beauty.</p>
+              </div>
           </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="h-100 p-5 m-4 text-dark rounded-3">
-            <h1 class="red">Software Tuning</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit ut, nam quam placeat aliquid laboriosam accusantium dicta dolor, accusamus necessitatibus asperiores deserunt quibusdam architecto aspernatur minima optio tenetur officia corporis!
-            </p>
+          <div class="col">
+              <div class="card h-100 p-4 animate__animated animate__fadeIn">
+                  <img src="https://i.ibb.co/gmY5V4r/shutterstock-69417-7009.jpg" alt="Customer Satisfaction" class="card-img-top mb-3">
+                  <h2 class="card-title">Customer Satisfaction</h2>
+                  <p class="card-text">We strive to exceed our customers' expectations by providing exceptional products and personalized service. Your satisfaction is our top priority.</p>
+              </div>
           </div>
-        </div>
       </div>
-
-      <div class="row-align-items-md-stretch">
-        <div class="col-md-6">
-          <div class="h-100 p-5 m-4 text-dark rounded-3">
-            <h1 class="red">Accessories</h1>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel quas eius saepe iste sapiente sit magnam voluptatum corporis! Possimus illo, repudiandae rerum odit a architecto quod sapiente similique dolore tenetur.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="h-100 p-5 m-4 rounded-3">
-            <img
-              id="img-3"
-              src=""
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="position-relative overflow-hidden text-center" id="hero">
-      <div class="col-md-5 p-lg-5 mx-auto my-5">
-        <h1 class="display-3">Meet Our Mascots</h1>
-      </div>
-    </div>
-
-    <div class="row-align-items-md-stretch">
-      <div class="col-md-6">
-        <div class="h-100 p-5 m-4 text-dark rounded-3">
-          <p class="text-black">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore mollitia ut ea quasi officiis possimus adipisci quod, optio ipsam hic eaque, numquam rem eligendi, accusamus ducimus soluta neque cupiditate a!
-          </p>
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="h-100 p-5 m-4 rounded-3">
-          <img
-            class="img-4"
-            src=""
-          />
-        </div>
-      </div>
-    </div>
-    <div class="row-align-items-md-stretch">
-      <div class="col-md-6">
-        <div class="h-100 p-5 m-4 rounded-3">
-          <img
-            class="img-5"
-            src=""
-          />
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="h-100 p-5 m-4 text-dark rounded-3">
-          <p class="text-black">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime tenetur hic doloribus cupiditate, obcaecati fuga officia ratione quaerat, soluta molestias corporis natus, deserunt veritatis sapiente possimus minima magni ipsa ex.
-          </p>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
 <script>
+export default {
+  // Add any necessary logic here
+}
 </script>
 
-<style>
-.bgcolor {
-  background-image: #8ca1d1;
-}
-#hero {
-  background-color: black;
-  color: white;
+<style scoped>
+.about-page {
+  background-color: #8ca1d1;
 }
 
-.row-align-items-md-stretch {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.jumbotron {
+  background-color: #000;
 }
 
-#img-1,
-#img-2 {
-  height: 320px;
-  width: 350px;
-}
-#img-3 {
-  width: 350px;
+.card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
 }
 
-.img-5 {
-  width: 500px;
-}
-.img-4 {
-  width: 600px;
-}
-#img-1:hover,
-#img-2:hover,
-#img-3:hover,
-.img-4:hover,
-.img-5:hover {
-  transform: scale(1.1);
+.card:hover {
+  transform: translateY(-5px);
 }
 
-.text-black {
-  font-size: xx-large;
+.card-title {
+  font-size: 1.5rem;
+  color: #ffa500;
 }
 
-.red {
-  color: red;
+.card-text {
+  font-size: 1.2rem;
 }
-.red:hover {
-  transform: scale(1.1);
+
+.container {
+  background-image: url(https://i.ibb.co/YPjNfdg/smoke-376543-1920.jpg);
+  background-size: cover;
+  background-attachment: fixed;
 }
-.text-animation {
-  overflow: hidden;
-  animation: typing 3s backwards;
-  white-space: nowrap;
+
+.card-img-top {
+  width: 100%;
+  height: auto;
 }
-@keyframes typing {
+
+/* Animation */
+.animate__animated {
+  animation-duration: 1s;
+}
+.animate__fadeIn {
+  animation-name: fadeIn;
+}
+@keyframes fadeIn {
   from {
-    width: 0;
+      opacity: 0;
   }
   to {
-    width: 100%;
-  }
-}
-
-/* Responsiveness */
-
-@media screen and (max-width: 900px) {
-  .row-align-items-md-stretch {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  #img-1,
-  #img-2,
-  #img-3 {
-    height: 320px;
-    width: 350px;
-  }
-
-  .img-4,
-  .img-5 {
-    width: 250px;
-  }
-}
-@media screen and (max-width: 800px) {
-  .row-align-items-md-stretch {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  #img-1,
-  #img-2,
-  #img-3 {
-    height: 270px;
-    width: 300px;
-  }
-
-  .img-4,
-  .img-5 {
-    width: 200px;
-  }
-}
-@media screen and (max-width: 400px) {
-  .row-align-items-md-stretch {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  #img-1,
-  #img-2,
-  #img-3 {
-    height: 120px;
-    width: 150px;
-  }
-
-  .img-4,
-  .img-5 {
-    height: 150px;
-    width: 150px;
+      opacity: 1;
   }
 }
 </style>

@@ -24,10 +24,9 @@
             <td>{{ user.userRole }}</td>
             <td>{{ user.userEmail }}</td>
             <td>
-              <EditUserComp :user="user" /><button
+              <EditUserComp :user="user" /><button type="button"
                 class="btn"
-                @click="deleteUser(user.userID) "
-                id="btn"
+                @click="deleteUser(user.userID)"
               >
                 Delete
               </button>
@@ -78,7 +77,7 @@
               </td>
               <td>
                 <EditProdComp :product="product" />
-                <button @click="deleteProduct(product.prodID)" class="btn" id="btn">
+                <button @click="deleteProduct(product.prodID)" type="button"  class="btn" id="btn">
                   Delete
                 </button>
               </td>
@@ -123,10 +122,10 @@
     },
     methods: {
     deleteUser(userID) {
-      this.$store.dispatch("deleteUsers", userID);
+      this.$store.dispatch("deleteUser", userID);
     },
     deleteProduct(prodID) {
-      this.$store.dispatch("deleteBoats", prodID);
+      this.$store.dispatch("deleteProduct", prodID);
     },
   },
   };

@@ -13,16 +13,13 @@
               <div class="col-md-7">
                 <div class="contact-wrap w-100 p-md-5 p-4">
                   <h3 class="mb-4">Contact Us</h3>
-                  <div id="form-message-warning" class="mb-4"></div>
                   <div id="form-message-success" class="mb-4">
                     Your message was sent, thank you!
                   </div>
                   <form
-                    method="POST"
-                    id="contactForm"
-                    name="contactForm"
-                    class="contactForm"
-                  >
+  action="https://formspree.io/f/xwkgnrov"
+  method="POST"
+>
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
@@ -33,6 +30,7 @@
                             name="name"
                             id="name"
                             placeholder="Name"
+                            required
                           />
                         </div>
                       </div>
@@ -45,6 +43,7 @@
                             name="email"
                             id="email"
                             placeholder="Email"
+                            required
                           />
                         </div>
                       </div>
@@ -57,6 +56,7 @@
                             name="subject"
                             id="subject"
                             placeholder="Subject"
+                            required
                           />
                         </div>
                       </div>
@@ -70,6 +70,7 @@
                             cols="30"
                             rows="4"
                             placeholder="Message"
+                            required
                           ></textarea>
                         </div>
                       </div>

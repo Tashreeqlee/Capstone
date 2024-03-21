@@ -177,7 +177,7 @@ export default createStore({
         let { msg } = await (
           await axios.delete(`${Dazzle}products/delete/${prodID}`)
         ).data;
-        context.dispatch("fetchProducts");
+        context.commit("deleteProduct", prodID);
         sweet({
           title: "Delete product",
           text: msg,
@@ -197,7 +197,7 @@ export default createStore({
     //users
     async register(context, payload) {
       try {
-        let { msg } = (await axios.post(`${Dazzle}users/register`, payload))
+        let { msg } = (await axios.post(`${Dazzle}register`, payload))
           .data;
         if (msg) {
           context.dispatch("fetchUsers");
@@ -279,9 +279,9 @@ export default createStore({
     },
     async deleteUser(context, userID) {
       try {
-        let { msg } = (await axios.delete(`${Dazzle}users/${userID}`))
+        let { msg } = (await axios.delete(`${Dazzle}users/delete/${userID}`))
           .data;
-        context.dispatch("fetchUsers");
+        context.commit("deleteUser", userID);
         sweet({
           title: "Delete user",
           text: msg,

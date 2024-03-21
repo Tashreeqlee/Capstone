@@ -43,22 +43,16 @@ class Users {
         INSERT INTO Users
         SET ?;
         `;
-    db.query(qry, [data], (err) => {
-      if (err) {
-        res.json({
-          status: res.statusCode,
-          msg: "email address already exists",
+        db.query(qry, [data], (err) => {
+          if (err) throw err;
+          //create token
+          let token = createToken(user);
+          res.json({
+            status: res.statusCode,
+            token,
+            msg: "You are now registered",
+          });
         });
-      } else {
-        // Create a token
-        let token = createToken(user);
-        res.json({
-          status: res.statusCode,
-          token,
-          msg: "You're registered",
-        });
-      }
-    });
   }
   async updateUser(req, res) {
     const data = req.body;

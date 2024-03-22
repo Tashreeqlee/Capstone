@@ -1,8 +1,8 @@
 <template>
   <div class="login">
     <div class="container w-75">
-      <div class="container p-5 text-dark">
-        <h1>LOGIN</h1>
+      <div class="container p-5 mt-3">
+        <h1 class="heading">LOGIN</h1>
       </div>
       <form class="mt-5 p-5 text-dark">
         <div class="mb-3">
@@ -11,6 +11,7 @@
             type="email"
             class="form-control"
             id="exampleInputEmail1"
+            placeholder="Email address"
             aria-describedby="emailHelp"
             v-model="payload.userEmail"
             required
@@ -22,15 +23,16 @@
             type="password"
             class="form-control"
             id="exampleInputPassword1"
+            placeholder="Password"
             v-model="payload.userPass"
             required
           />
         </div>
-        <button @click.prevent="log" type="button" class="">Login</button>
+        <button @click.prevent="log" type="button" class="submit">Login</button>
       </form>
-      <p>Don't have an account?</p>
-      <button class="link" type="button">
-        <router-link to="/register" class="">Register</router-link>
+      <p class="text-white">Don't have an account?</p>
+      <button type="button" class="submit mb-3">
+        <router-link to="/register">Register</router-link>
       </button>
     </div>
   </div>
@@ -69,6 +71,11 @@ export default {
 
 
 <style>
+
+.heading {
+  color: white;
+  font-size: 100px;
+}
 .login {
   display: flex;
   justify-content: center;
@@ -78,13 +85,21 @@ export default {
   background-size: cover;
   background-attachment: fixed;
   width: 100%;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .container {
-  background-color: #f8f9fa;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-image: url(https://i.ibb.co/YPjNfdg/smoke-376543-1920.jpg);
+  border-radius: 50px;
+  box-shadow: 0 0 10px rgba(255, 165, 0, 1);
+  transition: box-shadow 0.3s ease;
 }
+
+.container:hover{
+  box-shadow: 0 0 20px rgba(255, 165, 0, 0.8);
+}
+
 
 h1 {
   text-align: center;
@@ -100,6 +115,7 @@ form {
 .form-label {
   font-size: 18px;
   margin-bottom: 10px;
+  color: #ffa500;
 }
 
 .form-control {
@@ -108,26 +124,30 @@ form {
   border: 1px solid #ced4da;
   margin-bottom: 20px;
 }
-
-.btn-primary {
-  background-color: #007bff;
+.submit {
+  border: none;
+  outline: none;
+  background-color: #ffa500;
+  padding: 10px;
+  border-radius: 10px;
   color: #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
-  border: none;
+  font-size: 16px;
+  transform: .3s ease;
+}
+
+.submit:hover {
+  background-color: #8ca1d1;
   cursor: pointer;
 }
 
-.link {
-  text-align: center;
-  margin-top: 20px;
-}
+@media (max-width: 575.98px) {
 
-.link button {
-  background-color: transparent;
-  border: none;
-  color: #007bff;
-  cursor: pointer;
-}
+    .heading {
+      font-size: 40px;
+      text-align: center;
+    }
+  }
+
+
 </style>
   

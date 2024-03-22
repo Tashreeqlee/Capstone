@@ -86,5 +86,40 @@ export default {
   .card:hover {
     box-shadow: 0 0 50px rgba(255, 165, 0, 2);
   }
+
+  @media (max-width: 768px) {
+  .text-animation h1 {
+    font-size: x-small;
+  }
+
+  .text-animation p {
+    font-size: x-small;
+  }
+
+  .btn-lg {
+    padding: 6px 7px;
+    font-size: small;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 70%;
+    margin-bottom: 20px;
+  }
+  .card-title {
+    font-size: x-small;
+  }
+  .card-text {
+    font-size: xx-small;
+  }
+  .card-img-top {
+    max-width: 15rem;
+    height: 3rem;
+  }
+}
 </style>
 

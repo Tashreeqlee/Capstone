@@ -145,4 +145,10 @@ export default {};
     opacity: 1;
   }
 }
+
+@media (max-width: 768px) {
+  .text-animation {
+    font-size: x-small;
+  }
+}
 </style>

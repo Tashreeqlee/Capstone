@@ -6,10 +6,10 @@
       </div>
       <div class="card-body">
         <img :src="product.prodUrl" :alt="product.prodName" class="card-img-top" />
-        <p class="card-text">Price: R {{ product.prodPrice }}</p>
-        <p class="card-text">Category: {{ product.category }}</p>
-        <p class="card-text">Description: {{ product.description }}</p>
-        <p class="card-text">Stock Left: {{ product.quantity }}</p>
+        <p class="card-text"><span class="single">Price</span> : R {{ product.prodPrice }}</p>
+        <p class="card-text"><span class="single">Category</span>: {{ product.category }}</p>
+        <p class="card-text"><span class="single">Description</span>: {{ product.description }}</p>
+        <p class="card-text"><span class="single">Stock Left</span>: {{ product.quantity }}</p>
         <button @click="addToCart(product.prodID)">Add To Cart</button>
       </div>
     </div>
@@ -27,6 +27,7 @@ export default {
         product() {
             return this.$store.state.product;
         },
+
     },
     mounted() {
         this.$store.dispatch("fetchProduct", this.$route.params );
@@ -49,12 +50,18 @@ export default {
 
 <style scoped>
 .card-container {
+  background-image: url(https://i.ibb.co/YPjNfdg/smoke-376543-1920.jpg);
+  background-size: cover;
+  background-attachment: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
+  margin-top: 10px;
 }
-
+.single {
+    color: #ffa500;
+  }
 .card {
   width: 300px;
   border: 1px solid #ccc;

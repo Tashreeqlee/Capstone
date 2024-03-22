@@ -4,11 +4,11 @@
         Products
       </h2>
       <div class="buttons">
-        <div class="search">
+        <div class="search mb-3">
           <input type="text" v-model="search" placeholder="search" />
         </div>
         <div>
-          <button @click="sortByPrice" class="sort">Sort by Price</button>
+          <button @click="sortByPrice" class="sort m-auto">Sort by Price</button>
           <button @click="sortByName" class="sort">Sort by Name</button>
         </div>
       </div>
@@ -95,14 +95,6 @@
       width: 100%;
     }
   }
-  
-  .buttons {
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
-    margin: 10px;
-  }
-  
   .search {
     flex: 10;
   }
@@ -110,8 +102,6 @@
   .sort {
     background-color: #8ca1d1;
     color: white;
-    padding: 10px 20px;
-    margin-right: 10px;
   }
   .sort:hover{
     transform: scale(1.1);

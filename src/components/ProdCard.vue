@@ -51,21 +51,27 @@ a {
 
 @media only screen and (max-width: 700px) {
   .card {
-    max-width: 18rem;
+    max-width: 10rem;
   }
   .card-img-top {
-    max-width: 16rem;
-    height: 14rem;
+    max-width: 10rem;
+    height: 10rem;
   }
 }
 
 @media only screen and (max-width: 450px) {
   .card {
-    max-width: 16rem;
+    max-width: 7rem;
   }
   .card-img-top {
-    max-width: 14rem;
-    height: 16rem;
+    max-width: 7rem;
+    height: 7rem;
+  }
+  .card-body {
+    font-size: x-small;
+  }
+  .card-title {
+    font-size: x-small;
   }
 }
 </style>

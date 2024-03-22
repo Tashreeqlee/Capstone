@@ -1,7 +1,7 @@
 <template>
     <h2 class="text-center text-animation">Checkout</h2>
   <div class="checkout container-fluid d-flex justify-content-center text-center">
-    <table class="text-dark">
+    <table class="text-white">
       <tr>
         <th>Product Image</th>
         <th>Product Name</th>

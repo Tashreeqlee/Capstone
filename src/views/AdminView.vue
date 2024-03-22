@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="header text-center text-white">Admin</h1><br>
+    <h1 class="header text-center text-animation">Admin</h1><br>
     <div>
       <h3 class="users text-center text-white">Users</h3>
       <AddUserComp />
@@ -41,7 +41,7 @@
   
       <br><br>
       <div>
-        <h3 class="products text-center text-white">Products</h3>
+        <h3 class="products text-center text-animation">Products</h3>
         <AddProdComp />
         <div class="table-responsive text-white">
           <table >
@@ -147,6 +147,7 @@
     padding: 10px;
     text-align: left;
     border-bottom: 1px solid #ddd;
+    border: 2px solid #526d82;
   }
 
   th {
@@ -182,5 +183,20 @@
 
   .product-image {
     width: 100px;
+  }
+
+  .text-animation {
+    color: whitesmoke;
+    overflow: hidden;
+    animation: typing 3s backwards;
+    white-space: nowrap;
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
   }
 </style>

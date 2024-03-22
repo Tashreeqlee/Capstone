@@ -2,7 +2,7 @@
   <div class="login">
     <div class="container w-75">
       <div class="container p-5 mt-3">
-        <h1 class="heading">LOGIN</h1>
+        <h1 class="heading text-animation">LOGIN</h1>
       </div>
       <form class="mt-5 p-5 text-dark">
         <div class="mb-3">
@@ -148,6 +148,20 @@ form {
     }
   }
 
+  .text-animation {
+    color: whitesmoke;
+    overflow: hidden;
+    animation: typing 3s backwards;
+    white-space: nowrap;
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
 
 </style>
   

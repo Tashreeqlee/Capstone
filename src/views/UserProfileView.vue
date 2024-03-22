@@ -1,8 +1,7 @@
 <template>
   <div v-if="user">
-    <div class="profile"></div>
     <div class="container-fluid story">
-      <h1>User Profile</h1>
+      <h1 class="text-animation">User Profile</h1>
     </div>
     <div
       :user="user"
@@ -11,10 +10,10 @@
     >
       <div class="text-white">
 
-        <h4>Name : {{ user.userName }}</h4>
-        <h4>Surname: {{ user.userSurname }}</h4>
-        <h4>Role: {{ user.userRole }}</h4>
-        <h4>Email Address: {{ user.userEmail }}</h4>
+        <h4><span class="prof">Name</span> : {{ user.userName }}</h4>
+        <h4><span class="prof">Surname</span> : {{ user.userSurname }}</h4>
+        <h4><span class="prof">Role</span> : {{ user.userRole }}</h4>
+        <h4><span class="prof">Email Address</span> : {{ user.userEmail }}</h4>
       </div>
     </div>
     <EditUserComp :user="user"/>
@@ -69,6 +68,22 @@ export default {
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
+.text-animation {
+    color: whitesmoke;
+    overflow: hidden;
+    animation: typing 3s backwards;
+    white-space: nowrap;
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  .prof {
+    color: #ffa500;
+  }
 
 </style>

@@ -1,7 +1,7 @@
 <template>
-    <h2 class="text-center text-white">Checkout</h2>
+    <h2 class="text-center text-animation">Checkout</h2>
   <div class="checkout container-fluid d-flex justify-content-center text-center">
-    <table class="text-white">
+    <table class="text-dark">
       <tr>
         <th>Product Image</th>
         <th>Product Name</th>
@@ -37,5 +37,18 @@ td {
   border: 2px solid #526d82;
   
 }
-
+.text-animation {
+    color: whitesmoke;
+    overflow: hidden;
+    animation: typing 3s backwards;
+    white-space: nowrap;
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
 </style>

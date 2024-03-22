@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="container-bg">
-      <div class="text-white">
+      <div class="text-animation">
         <h1>Welcome to Dazzle District</h1>
         <p>Elevating Elegance, One Gem at a Time.</p>
       </div>
@@ -65,5 +65,26 @@ export default {
   background-size: cover;
   background-attachment: fixed;
 }
+.text-animation {
+    color: whitesmoke;
+    overflow: hidden;
+    animation: typing 3s backwards;
+    white-space: nowrap;
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  .card {
+    box-shadow: 0 0 10px rgba(255, 165, 0, 1);
+  transition: box-shadow 0.3s ease;
+  }
+  .card:hover {
+    box-shadow: 0 0 50px rgba(255, 165, 0, 2);
+  }
 </style>
 

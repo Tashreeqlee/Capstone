@@ -7,7 +7,7 @@
             <div class="row no-gutters mb-5">
               <div class="">
                 <div class="">
-                  <h3 class="mb-4 text-white">Contact Us</h3>
+                  <h3 class="mb-4 text-animation">Contact Us</h3>
                   <div class="label mb-4">
                     Your message was sent, thank you!
                   </div>
@@ -191,6 +191,21 @@ textarea.form-control {
 .bi-envelope-at {
   fill: #8ca1d1;
 }
+
+.text-animation {
+    color: whitesmoke;
+    overflow: hidden;
+    animation: typing 3s backwards;
+    white-space: nowrap;
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
 </style>
   
   

@@ -21,8 +21,12 @@ export default {
 
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap');
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Vast Shadow", serif;
+  font-weight: 400;
+  font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

@@ -10,7 +10,13 @@
         <p class="card-text"><span class="single">Category</span>: {{ product.category }}</p>
         <p class="card-text"><span class="single">Description</span>: {{ product.description }}</p>
         <p class="card-text"><span class="single">Stock Left</span>: {{ product.quantity }}</p>
-        <button @click="addToCart(product.prodID)">Add To Cart</button>
+        <router-link
+          to="/checkout"
+          type="button"
+          class="btn btn-outline-light btn-lg animate__animated animate__bounce animate__delay-3s mb-4"
+        >
+          Add To Cart
+        </router-link>
       </div>
     </div>
   </div>

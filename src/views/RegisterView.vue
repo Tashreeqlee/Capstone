@@ -78,7 +78,7 @@ export default {
   },
   methods: {
     register() {
-      this.$store.dispatch('register', this.payload);
+      this.$store.dispatch("createUser", this.payload);
     },
   },
 };

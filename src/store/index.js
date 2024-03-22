@@ -195,9 +195,9 @@ export default createStore({
     },
 
     //users
-    async register(context, payload) {
+    async createUser(context, payload) {
       try {
-        let { msg } = (await axios.post(`${Dazzle}register`, payload))
+        let { msg } = (await axios.post(`${Dazzle}users/register`, payload))
           .data;
         if (msg) {
           context.dispatch("fetchUsers");
@@ -217,6 +217,29 @@ export default createStore({
           icon: "error",
           timer: 2000,
         });
+      }
+    },
+    async addUsers(context, payload) {
+      try {
+        let { msg } = (await axios.post(`${Dazzle}users/register`, payload)).data;
+        if (msg) {
+          context.dispatch("fetchUsers");
+          sweet({
+            title: "New user",
+            text: msg,
+            icon: "success",
+            timer: 2000,
+          });
+        } else {
+          sweet({
+            title: "Error",
+            text: msg,
+            icon: "error",
+            timer: 2000,
+          });
+        }
+      } catch (e) {
+        context.commit("setMsg", "An error has occured");
       }
     },
     async fetchUsers(context) {

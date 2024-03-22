@@ -18,7 +18,7 @@
                     </div>
                     <div class="modal-footer">
                         <button class="btn" type="button" data-bs-dismiss="modal">Close</button>
-                        <button class="btn" type="button" data-bs-dismiss="modal" @click="addProduct">Add</button>
+                        <button class="btn" type="button" data-bs-dismiss="modal" @click.prevent="addProd">Add</button>
                     </div>
                 </div>
             </div>
@@ -28,7 +28,6 @@
 
 <script>
 export default {
-  props: ["product"],
   data() {
     return {
       payload: {
@@ -43,7 +42,7 @@ export default {
     };
   },
   methods: {
-    addProducts() {
+    addProd() {
       this.$store.dispatch("addProduct", this.payload);
     },
   },

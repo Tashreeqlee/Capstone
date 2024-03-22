@@ -10,11 +10,11 @@
                         <button class="btn-close" type="button" aria-label="close"></button>
                     </div>
                     <div class="modal-body">
-                        <input class="input m-2" type="text" placeholder="User Name" v-model="model.user.userName">
-                        <input class="input m-2" type="text" placeholder="User Surname" v-model="model.user.userSurname">
-                        <input class="input m-2" type="text" placeholder="User Role" v-model="model.user.userRole">
-                        <input class="input m-2" type="text" placeholder="User Email" v-model="model.user.userEmail">
-                        <input class="input m-2" type="text" placeholder="User Password" v-model="model.user.userPass">
+                        <input class="input m-2" type="text" placeholder="User Name" v-model="payload.userName">
+                        <input class="input m-2" type="text" placeholder="User Surname" v-model="payload.userSurname">
+                        <input class="input m-2" type="text" placeholder="User Role" v-model="payload.userRole">
+                        <input class="input m-2" type="text" placeholder="User Email" v-model="payload.userEmail">
+                        <input class="input m-2" type="text" placeholder="User Password" v-model="payload.userPass">
                     </div>
                     <div class="modal-footer">
                         <button class="btn" type="button" data-bs-dismiss="modal">Close</button>
@@ -30,23 +30,18 @@
   export default {
         data() {
             return {
-                model: {
-                    user: {
+                payload: {
                         userName: "",
                         userSurname: "",
                         userRole: "",
                         userEmail: "",
                         userPass: "",
-                    }
                 }
             };
         },
         methods: {
             addUser() {
-                this.$store.dispatch("addUser", this.model.user);
-                setTimeout(() => {
-                    location.reload();
-                }, 500);
+                this.$store.dispatch("addUsers", this.payload);
             },
         },
     };

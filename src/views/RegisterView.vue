@@ -8,7 +8,7 @@
         <div class="mb-3">
           <h1 for="exampleInputEmail1" class="form-label">First Name</h1>
           <input
-            type="email"
+            type="userName"
             class="form-control"
             id="exampleInputEmail1"
             placeholder="First Name"
@@ -20,7 +20,7 @@
         <div class="mb-3">
           <h1 for="exampleInputEmail1" class="form-label">Last Name</h1>
           <input
-            type="email"
+            type="userSurname"
             class="form-control"
             id="exampleInputEmail1"
             placeholder="Last Name"
@@ -44,7 +44,7 @@
         <div class="mb-3">
           <h1 for="exampleInputEmail1" class="form-label">User Role</h1>
           <input
-            type="email"
+            type="userRole"
             class="form-control"
             id="exampleInputEmail1"
             placeholder="User Role"
@@ -56,7 +56,7 @@
         <div class="mb-3">
           <h1 for="exampleInputEmail1" class="form-label">Password</h1>
           <input
-            type="email"
+            type="userPass"
             class="form-control"
             id="exampleInputEmail1"
             placeholder="Password"

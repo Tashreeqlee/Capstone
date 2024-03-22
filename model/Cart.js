@@ -1,75 +1,93 @@
 import {connection as db} from '../config/index.js'
 
-class Cart{
-    fetchCart(req, res){
-        const query = `SELECT c.cartID, u.userID, p.prodID, p.prodName, p.prodPrice, p.prodUrl
-        FROM Cart c
-        INNER JOIN Users u
-        USING(userID)
-        INNER JOIN Products p
-        USING(prodID);`;
-
+class Cart {
+    fetchOrders(req, res) {
+        const query = `
+        SELECT cartId, userID, prodID, quantity 
+        FROM Cart
+        `;
         db.query(query, (err, results) => {
-            if(err) throw err; 
+            if (err) throw (err);
             res.json({
-                status: res.StatusCode, 
+                status: res.statusCode,
                 results
             })
         })
     }
 
-    addToCart(req, res){
+    fetchCart(req, res) {
         const query = `
-        INSERT INTO Cart
-        SET?;`;
-
-        db.query(query, req.body, (err) => {
-            if(err){
-                res.json({
-                    status: res.StatusCode,
-                    message: "Could not insert a new product"
-                });
-            }
-            else{
-                res.json({
-                    status: res.statusCode,
-                    message: "Successfully added new product"
-                })
-            }
+        SELECT prodName, prodPrice, prodUrl
+        FROM Users
+        INNER JOIN Cart ON Users.userID = Cart.userID
+        INNER JOIN Products ON Cart.prodID = Products.prodID
+        WHERE Cart.userID = Users.userID
+        `;
+        db.query(query, (err, results) => {
+            if (err) throw err;
+            res.json({
+                status: res.statusCode,
+                results
+            })
         })
     }
 
-    updateCart(req, res){
+    insertCart(req, res) {
         const query = `
-        Update Cart
-        SET ?
-        WHERE cartID = ?;`;
-
-        db.query(query, [req.body, req.params.id], (err) => {
-            if(err) throw err
-
+        INSERT INTO Cart SET ?
+        `;
+        db.query(query, [req.body], (err) => {
+            if (err) throw err;
             res.json({
-                status: res.StatusCode, 
-                message: "Cart has been updated"
-            });
-        });
+                status: res.statusCode,
+                message: "Product has been added to cart!",
+            })
+        })
     }
 
-    deleteCart(req, res){
+    updateCart(req, res) {
+        const query = `
+        UPDATE Cart SET ?
+        WHERE cartID = ?
+        `;
+        db.query(query, [req.body, req.params.id], (err) => {
+            if (err) throw (err);
+            res.json({
+                status: res.statusCode,
+                message: "Cart has been updated"
+            })
+        })
+    }
+
+    clearCart(req, res) {
+        const query = `
+        DELETE FROM cart 
+        WHERE userID = ${req.params.id}
+        `;
+        db.query(query, (err) => {
+            if (err) throw (err);
+            res.json({
+                status: res.statusCode,
+                message: "Cart has been cleared"
+            })
+        })
+    }
+
+    deleteCart(req, res) {
         const query = `
         DELETE FROM Cart
-        WHERE cartID = ?;`;
-
-        db.query(query, [req.params.id], (err) => {
-            if (err) throw err;
-
+        WHERE prodID = ${req.params.id}
+        `;
+        db.query(query, (err) => {
+            if(err) throw err;
             res.json({
-                status: res.statusCode, 
-                message: "Cart has been emptied"
-            });
-        });
+                status: res.statusCode,
+                message: "Product deleted from cart!"
+            })
+        })
     }
-}    
+}  
+ 
 
 export {
     Cart

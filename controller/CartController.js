@@ -17,7 +17,7 @@ cartRouter.get('/user/:id/carts', (req, res) => {
 
 cartRouter.post('/user/:id/cart', bodyParser.json(), (req, res) => {
     try {
-        cart.addToCart(req, res);
+        cart.insertCart(req, res);
     } catch (e) {
         res.json({
             status: res.statusCode,
@@ -28,7 +28,7 @@ cartRouter.post('/user/:id/cart', bodyParser.json(), (req, res) => {
 
 cartRouter.patch('/user/:id/cart/:id', bodyParser.json(), (req, res) => {
     try {
-        cart.updateCart(req, res);
+        cart.deleteCart(req, res);
     } catch (e) {
         res.json({
             status: res.statusCode,
@@ -39,7 +39,7 @@ cartRouter.patch('/user/:id/cart/:id', bodyParser.json(), (req, res) => {
 
 cartRouter.delete('/user/:id/cart', (req, res) => {
     try {
-        cart.deleteCart(req, res);
+        cart.clearCart(req, res);
     } catch (e) {
         res.json({
             status: res.statusCode,

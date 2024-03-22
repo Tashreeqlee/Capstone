@@ -10,9 +10,7 @@
         <p class="card-text">Category: {{ product.category }}</p>
         <p class="card-text">Description: {{ product.description }}</p>
         <p class="card-text">Stock Left: {{ product.quantity }}</p>
-        <button class="btn btn-outline-dark animate__animated animate__bounce animate__delay-3s" @click.prevent="addCart(product)">
-          Add To Cart
-        </button>
+        <button @click="addToCart(product.prodID)">Add To Cart</button>
       </div>
     </div>
   </div>
@@ -33,15 +31,20 @@ export default {
     mounted() {
         this.$store.dispatch("fetchProduct", this.$route.params );
     },
-    methods: {
-    addCart(product) {
-      this.$store.dispatch("addToCart", product);
-    },
-  },
     components: {
         SpinnerComp
-    }
-}
+    },
+    methods: {
+    addToCart(prodID) {
+      if (this.user.userID) {
+        this.$store.dispatch("addToCart", {
+          userID: this.user.userID,
+          prodID,
+        });
+      }
+    },
+  },
+};
 </script>
 
 <style scoped>

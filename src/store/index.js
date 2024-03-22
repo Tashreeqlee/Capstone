@@ -16,7 +16,7 @@ export default createStore({
     products: null,
     asc: true,
     msg: null,
-    cart: [],
+    cart: null,
   },
   getters: {
     getTotal(state) {
@@ -45,13 +45,6 @@ export default createStore({
     setMsg(state, msg) {
       state.msg = msg;
     },
-    addToCart(state, product) {
-      state.cart.push(product);
-      localStorage.setItem("cart", JSON.stringify(state.cart));
-    },
-    setCart(state, product) {
-      state.cart = product;
-    },
     sortProducts: (state) => {
       state.products.sort((a, b) => {
         return a.Amount - b.Amount;
@@ -76,12 +69,20 @@ export default createStore({
       }
       state.asc = !state.asc;
     },
-
     setUsers: (state, value) => {
       state.users = value;
     },
     setUser: (state, value) => {
       state.user = value;
+    },
+    setCart: (state, value) => {
+      state.cart = value;
+    },
+    addToCart(state, product) {
+      state.cart.push(product);
+    },
+    removeFromCart(state, cartID) {
+      state.cart = state.cart.filter((cart) => cart.cartID !== cartID);
     },
   },
   actions: {
@@ -373,17 +374,33 @@ export default createStore({
 
 
     // Cart
-    addCart(context, product) {
-      context.commit("addToCart", product);
+    async getCart(context, id) {
+      const res = await axios.get(`${Dazzle}user/${id}/carts`);
+      context.commit("setCart", res.data);
     },
-    async fetchCart(context) {
+    async addProdToCart({ commit }, { userID, prodID }) {
       try {
-        const cartData = JSON.parse(localStorage.getItem("cart"));
-        this.$store.commit("setCart", cartData);
+        const res = await axios.post(`${Dazzle}user/${userID}/cart`, {
+          userID,
+          prodID,
+        });
+        if (res.status === 200) {
+          commit("addToCart", res.data);
+        } else {
+          sweet({
+            title: "info",
+            text: "",
+            icon: "info",
+            timer: 2000,
+          });
+        }
       } catch (e) {
-        context.commit("setMsg", "Error has ocurred");
+        sweet({
+          title: "Error",
+          text: "",
+          icon: "error",
+          timer: 2000,
+        });
       }
-    },
-  },
-  modules: {},
+    }}
 });
